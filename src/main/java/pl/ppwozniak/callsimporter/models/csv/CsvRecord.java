@@ -16,6 +16,4 @@ public class CsvRecord {
     private long dateAndTimeInMiliseconds;
 
     private int type;
-
-    private String redable_date;
 }

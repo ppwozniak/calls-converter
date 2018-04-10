@@ -16,6 +16,10 @@ import java.util.LinkedHashSet;
  */
 public class XmlReader {
 
+    /**
+     * @param pathToDirWithXmlFiles
+     * @return
+     */
     public Collection<XmlRecord> parseXmlFiles(String pathToDirWithXmlFiles) {
         HashSet<XmlRecord> records = new LinkedHashSet<>();
         ObjectMapper xmlMapper = new XmlMapper();
@@ -33,6 +37,7 @@ public class XmlReader {
 
             } catch (IOException ex) {
                 System.err.println("File '" + file.getAbsolutePath() + "' is bad!");
+                ex.printStackTrace();
             }
         }
 
