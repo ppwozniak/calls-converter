@@ -1,4 +1,4 @@
-package pl.ppwozniak.callsimporter.models;
+package pl.ppwozniak.callsimporter.models.xml;
 
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import lombok.Getter;
@@ -6,13 +6,13 @@ import lombok.Setter;
 
 @Getter
 @Setter
-public class Record {
+public class XmlRecord {
 
     @JacksonXmlProperty(isAttribute = true, localName = "number")
     private String number;
 
     @JacksonXmlProperty(isAttribute = true, localName = "duration")
-    private int duration;
+    private long duration;
 
     @JacksonXmlProperty(isAttribute = true)
     private long date;
@@ -28,9 +28,8 @@ public class Record {
 
     @Override
     public boolean equals(Object o) {
-        if (o instanceof Record) {
-            Record r = (Record) o;
-            return r.hashCode() == this.hashCode();
+        if (o instanceof XmlRecord) {
+            return o.hashCode() == this.hashCode();
         } else {
             return false;
         }
@@ -43,7 +42,7 @@ public class Record {
 
     @Override
     public String toString() {
-        return "Record{" +
+        return "XmlRecord{" +
                 "number='" + number + '\'' +
                 ", duration=" + duration +
                 ", date=" + date +

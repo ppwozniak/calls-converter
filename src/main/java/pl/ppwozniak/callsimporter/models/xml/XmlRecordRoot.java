@@ -1,4 +1,4 @@
-package pl.ppwozniak.callsimporter.models;
+package pl.ppwozniak.callsimporter.models.xml;
 
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlElementWrapper;
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
@@ -11,10 +11,10 @@ import java.util.List;
 @JacksonXmlRootElement(localName = "calls")
 @Getter
 @Setter
-public class RecordRoot {
+public class XmlRecordRoot {
 
     @JacksonXmlElementWrapper(useWrapping = false)
-    private List<Record> call;
+    private List<XmlRecord> call;
 
     @JacksonXmlProperty(isAttribute = true)
     private int count;
