@@ -1,8 +1,8 @@
-package pl.ppwozniak.callsimporter.process;
+package pl.ppwozniak.callsconverter.process;
 
 import org.apache.commons.csv.CSVFormat;
 import org.apache.commons.csv.CSVPrinter;
-import pl.ppwozniak.callsimporter.models.csv.CsvRecord;
+import pl.ppwozniak.callsconverter.models.csv.CsvRecord;
 
 import java.io.FileWriter;
 import java.io.IOException;

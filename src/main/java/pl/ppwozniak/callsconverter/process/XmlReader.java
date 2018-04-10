@@ -1,9 +1,9 @@
-package pl.ppwozniak.callsimporter.process;
+package pl.ppwozniak.callsconverter.process;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.dataformat.xml.XmlMapper;
-import pl.ppwozniak.callsimporter.models.xml.XmlRecord;
-import pl.ppwozniak.callsimporter.models.xml.XmlRecordRoot;
+import pl.ppwozniak.callsconverter.models.xml.XmlRecord;
+import pl.ppwozniak.callsconverter.models.xml.XmlRecordRoot;
 
 import java.io.File;
 import java.io.IOException;

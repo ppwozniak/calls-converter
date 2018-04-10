@@ -1,7 +1,7 @@
-package pl.ppwozniak.callsimporter.process;
+package pl.ppwozniak.callsconverter.process;
 
-import pl.ppwozniak.callsimporter.models.csv.CsvRecord;
-import pl.ppwozniak.callsimporter.models.xml.XmlRecord;
+import pl.ppwozniak.callsconverter.models.csv.CsvRecord;
+import pl.ppwozniak.callsconverter.models.xml.XmlRecord;
 
 import java.util.Collection;
 import java.util.LinkedHashSet;

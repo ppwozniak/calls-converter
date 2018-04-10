@@ -1,4 +1,4 @@
-package pl.ppwozniak.callsimporter.models.xml;
+package pl.ppwozniak.callsconverter.models.xml;
 
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import lombok.Getter;

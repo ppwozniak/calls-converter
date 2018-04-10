@@ -1,4 +1,4 @@
-package pl.ppwozniak.callsimporter.models.csv;
+package pl.ppwozniak.callsconverter.models.csv;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;

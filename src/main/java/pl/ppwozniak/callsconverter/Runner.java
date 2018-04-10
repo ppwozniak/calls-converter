@@ -1,10 +1,10 @@
-package pl.ppwozniak.callsimporter;
+package pl.ppwozniak.callsconverter;
 
-import pl.ppwozniak.callsimporter.models.csv.CsvRecord;
-import pl.ppwozniak.callsimporter.models.xml.XmlRecord;
-import pl.ppwozniak.callsimporter.process.CsvWriter;
-import pl.ppwozniak.callsimporter.process.ObjectConverter;
-import pl.ppwozniak.callsimporter.process.XmlReader;
+import pl.ppwozniak.callsconverter.models.csv.CsvRecord;
+import pl.ppwozniak.callsconverter.models.xml.XmlRecord;
+import pl.ppwozniak.callsconverter.process.CsvWriter;
+import pl.ppwozniak.callsconverter.process.ObjectConverter;
+import pl.ppwozniak.callsconverter.process.XmlReader;
 
 import java.util.Collection;
 
