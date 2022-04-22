@@ -5,6 +5,7 @@ import pl.ppwozniak.callsconverter.models.xml.XmlRecord;
 
 import java.util.Collection;
 import java.util.LinkedHashSet;
+import java.util.Set;
 
 /**
  *
@@ -15,8 +16,8 @@ public class ObjectConverter {
      * @param xmlRecords
      * @return
      */
-    public static Collection<CsvRecord> convertXmlRecordsToCsvRecords(Collection<XmlRecord> xmlRecords) {
-        Collection<CsvRecord> csvRecords = new LinkedHashSet<>();
+    public static Set<CsvRecord> convertXmlRecordsToCsvRecords(Collection<XmlRecord> xmlRecords) {
+        Set<CsvRecord> csvRecords = new LinkedHashSet<>();
 
         for (XmlRecord rec : xmlRecords) {
             csvRecords.add(convertXmlRecordToCsvRecord(rec));

@@ -6,7 +6,8 @@ import pl.ppwozniak.callsconverter.process.CsvWriter;
 import pl.ppwozniak.callsconverter.process.ObjectConverter;
 import pl.ppwozniak.callsconverter.process.XmlReader;
 
-import java.util.Collection;
+import java.io.IOException;
+import java.util.Set;
 
 /**
  *
@@ -17,13 +18,21 @@ public class Runner {
      * @param args
      */
     public static void main(String[] args) {
-        String inputDir = args[0];
-        String outputFile = args[1];
+        if (args.length < 2) {
+            System.err.println("Please check parameters");
+        } else {
+            String inputDir = args[0];
+            String outputFile = args[1];
 
-        XmlReader reader = new XmlReader();
-        Collection<XmlRecord> xmlRecords = reader.parseXmlFiles(inputDir);
-        Collection<CsvRecord> csvRecords = ObjectConverter.convertXmlRecordsToCsvRecords(xmlRecords);
-        CsvWriter writer = new CsvWriter();
-        writer.writeToCsvFile(csvRecords, outputFile);
+            try {
+                XmlReader reader = new XmlReader();
+                Set<XmlRecord> xmlRecords = reader.parseXmlFiles(inputDir);
+                Set<CsvRecord> csvRecords = ObjectConverter.convertXmlRecordsToCsvRecords(xmlRecords);
+                CsvWriter writer = new CsvWriter();
+                writer.writeToCsvFile(csvRecords, outputFile);
+            } catch (IOException exception) {
+                System.err.println("Error I/O: " + exception.getMessage());
+            }
+        }
     }
 }

@@ -7,9 +7,9 @@ import pl.ppwozniak.callsconverter.models.xml.XmlRecordRoot;
 
 import java.io.File;
 import java.io.IOException;
-import java.util.Collection;
 import java.util.HashSet;
 import java.util.LinkedHashSet;
+import java.util.Set;
 
 /**
  *
@@ -20,7 +20,7 @@ public class XmlReader {
      * @param pathToDirWithXmlFiles
      * @return
      */
-    public Collection<XmlRecord> parseXmlFiles(String pathToDirWithXmlFiles) {
+    public Set<XmlRecord> parseXmlFiles(String pathToDirWithXmlFiles) throws IOException {
         HashSet<XmlRecord> records = new LinkedHashSet<>();
         ObjectMapper xmlMapper = new XmlMapper();
 
@@ -28,17 +28,8 @@ public class XmlReader {
         File[] xmlFiles = dir.listFiles((dir1, name) -> name.endsWith(".xml"));
 
         for (File file : xmlFiles) {
-            try {
-                XmlRecordRoot root = xmlMapper.readValue(file, XmlRecordRoot.class);
-
-                for (XmlRecord rec : root.getCall()) {
-                    records.add(rec);
-                }
-
-            } catch (IOException ex) {
-                System.err.println("File '" + file.getAbsolutePath() + "' is bad!");
-                ex.printStackTrace();
-            }
+            XmlRecordRoot root = xmlMapper.readValue(file, XmlRecordRoot.class);
+            records.addAll(root.getCall());
         }
 
         return records;
