@@ -6,6 +6,9 @@ import pl.ppwozniak.callsconverter.models.xml.XmlRecord;
 import java.util.Collection;
 import java.util.LinkedHashSet;
 
+/**
+ *
+ */
 public class ObjectConverter {
 
     /**

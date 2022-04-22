@@ -10,10 +10,7 @@ import lombok.Setter;
 public class CsvRecord {
 
     private String number;
-
     private long duration;
-
     private long dateAndTimeInMiliseconds;
-
     private int type;
 }
