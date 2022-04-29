@@ -18,7 +18,6 @@ public class CsvWriter {
      * @param outputFilePath
      */
     public void writeToCsvFile(Collection<CsvRecord> records, String outputFilePath) throws IOException {
-
         FileWriter fileWriter = new FileWriter(outputFilePath);
         CSVFormat format = CSVFormat.DEFAULT.builder().setHeader("number", "duration", "type", "miliseconds").build();
         CSVPrinter printer = new CSVPrinter(fileWriter, format);
